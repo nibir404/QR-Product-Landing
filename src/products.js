@@ -2,6 +2,7 @@
 export const products = [
   {
     id: 'business-brain',
+    brochure: '/brochures/business-brain-brochure.pdf',
     name: 'Business Brain',
     category: 'Agentic ERP',
     url: 'https://getbusinessbrain.ai/',
@@ -25,6 +26,7 @@ export const products = [
   },
   {
     id: 'joya',
+    brochure: '/brochures/joya-brochure.pdf',
     name: 'Joya',
     category: 'AI receptionist',
     url: 'https://getjoya.ai/',
@@ -49,6 +51,7 @@ export const products = [
   },
   {
     id: 'beto',
+    brochure: '/brochures/beto-brochure.pdf',
     name: 'Beto',
     category: 'Private AI',
     url: 'https://beto.sh/',
@@ -73,6 +76,7 @@ export const products = [
   },
   {
     id: 'qsor',
+    brochure: '/brochures/qsor-brochure.pdf',
     name: 'Qsor',
     category: 'Sovereign cloud',
     url: 'https://qsor.com/',

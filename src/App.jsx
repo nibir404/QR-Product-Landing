@@ -128,14 +128,25 @@ function ProductCard({ product }) {
         ))}
       </ul>
 
-      <a
-        href={product.url}
-        {...external}
-        className={`mt-auto flex min-h-[46px] items-center justify-between rounded-full px-[18px] py-3.5 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.99] ${theme.cta} ${theme.ring}`}
-      >
-        Visit {product.domain}
-        <ArrowUpRight />
-      </a>
+      <div className="mt-auto flex gap-2">
+        <a
+          href={product.url}
+          {...external}
+          className={`flex min-h-[46px] flex-1 items-center justify-between rounded-full px-[18px] py-3.5 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.99] ${theme.cta} ${theme.ring}`}
+        >
+          Visit {product.domain}
+          <ArrowUpRight />
+        </a>
+        <a
+          href={product.brochure}
+          download={`${product.name} brochure.pdf`}
+          aria-label={`Download ${product.name} brochure`}
+          title={`Download ${product.name} brochure`}
+          className={`flex size-[50px] shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.96] ${theme.iconTile} ${theme.ring}`}
+        >
+          <Icon name="download" className="size-5" />
+        </a>
+      </div>
     </article>
   )
 }

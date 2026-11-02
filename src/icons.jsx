@@ -85,6 +85,7 @@ const paths = {
       <path d="M6 6h.01M6 18h.01" />
     </>
   ),
+  download: <path d="M12 15V3M7 10l5 5 5-5M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />,
   code: <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />,
   cpu: (
     <>
