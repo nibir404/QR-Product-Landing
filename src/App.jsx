@@ -64,7 +64,7 @@ function HeroCard({ product, tilt }) {
   }
 
   return (
-    <a href={`#${product.id}`} aria-label={product.name} className={base}>
+    <a href={product.url} {...external} aria-label={`Visit ${product.name}`} className={base}>
       {inner}
     </a>
   )
@@ -102,7 +102,7 @@ function ProductCard({ product }) {
   const { theme } = product
   const isJoya = product.id === 'joya'
   return (
-    <article id={product.id} className="flex scroll-mt-6 flex-col gap-[18px] rounded-3xl bg-white p-5 md:p-8">
+    <article id={product.id} className="relative flex scroll-mt-6 flex-col gap-[18px] rounded-3xl bg-white p-5 transition-shadow hover:shadow-[0_12px_32px_rgba(17,17,17,0.08)] has-[a:active]:scale-[0.995] md:p-8">
       <header className="flex items-center gap-3">
         <img
           src={product.logo}
@@ -132,7 +132,7 @@ function ProductCard({ product }) {
         <a
           href={product.url}
           {...external}
-          className={`flex min-h-[46px] flex-1 items-center justify-between rounded-full px-[18px] py-3.5 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.99] ${theme.cta} ${theme.ring}`}
+          className={`flex min-h-[46px] flex-1 after:absolute after:inset-0 after:rounded-3xl items-center justify-between rounded-full px-[18px] py-3.5 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.99] ${theme.cta} ${theme.ring}`}
         >
           Visit {product.domain}
           <ArrowUpRight />
@@ -142,7 +142,7 @@ function ProductCard({ product }) {
           download={`${product.name} brochure.pdf`}
           aria-label={`Download ${product.name} brochure`}
           title={`Download ${product.name} brochure`}
-          className={`flex size-[50px] shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.96] ${theme.iconTile} ${theme.ring}`}
+          className={`relative z-10 flex size-[50px] shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.96] ${theme.iconTile} ${theme.ring}`}
         >
           <Icon name="download" className="size-5" />
         </a>
@@ -158,7 +158,7 @@ function Products() {
         <h2 className="text-[13px] font-medium tracking-[0.08em] text-muted uppercase md:text-[44px] md:leading-[48px] md:font-semibold md:tracking-[-0.035em] md:text-ink md:normal-case">
           What each one does
         </h2>
-        <p className="hidden text-[15px] text-muted md:block">Tap any card to visit the product</p>
+        <p className="hidden text-[15px] text-muted md:block">Tap any card to visit the product site</p>
       </div>
       <div className="grid gap-3 pt-2 md:grid-cols-2 md:gap-6 md:pt-6">
         {products.map((p) => (
